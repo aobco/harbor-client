@@ -33,4 +33,11 @@ func main() {
 	for i, user := range listUsers {
 		println(i, user.Username)
 	}
+
+	u, err := harborClient.GetUserByName(ctx, "lb")
+	if err != nil {
+		log.Errorf("%v", err)
+		panic(err)
+	}
+	println(u.Username)
 }

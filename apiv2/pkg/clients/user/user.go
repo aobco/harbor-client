@@ -3,6 +3,7 @@ package user
 import (
 	"context"
 	"errors"
+	"fmt"
 
 	"k8s.io/apimachinery/pkg/util/intstr"
 
@@ -85,8 +86,8 @@ func (c *RESTClient) GetUserByName(ctx context.Context, username string) (*model
 	}
 
 	c.Options.PageSize = 100
-
-	resp, err := c.ListUsers(ctx)
+	opt := &config.Options{Query: fmt.Sprintf("username=%s", username)}
+	resp, err := c.ListUsers(ctx, opt)
 	if err != nil {
 		return nil, handleSwaggerUserErrors(err)
 	}
@@ -134,11 +135,15 @@ func (c *RESTClient) GetUserByID(ctx context.Context, id int64) (*modelv2.UserRe
 
 // ListUsers lists and returns all registered Harbor users.
 // The maximum number of users listed is bound to the RESTClient's configured PageSize.
-func (c *RESTClient) ListUsers(ctx context.Context) ([]*modelv2.UserResp, error) {
+func (c *RESTClient) ListUsers(ctx context.Context, opts ...*config.Options) ([]*modelv2.UserResp, error) {
+	opt := c.Options
+	if len(opts) > 0 {
+		opt = opts[0]
+	}
 	params := user.ListUsersParams{
-		PageSize: &c.Options.PageSize,
-		Q:        &c.Options.Query,
-		Sort:     &c.Options.Sort,
+		PageSize: &opt.PageSize,
+		Q:        &opt.Query,
+		Sort:     &opt.Sort,
 		Context:  ctx,
 	}
 
