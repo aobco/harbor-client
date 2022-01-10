@@ -7,16 +7,16 @@ import (
 	runtimeclient "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/goharbor-client/v5/apiv1/internal/api/client"
+	"github.com/aobco/harbor-client/apiv1/internal/api/client"
 	"github.com/go-openapi/runtime"
 
-	"github.com/aobco/goharbor-client/v5/apiv1/project"
-	"github.com/aobco/goharbor-client/v5/apiv1/registry"
-	"github.com/aobco/goharbor-client/v5/apiv1/replication"
-	"github.com/aobco/goharbor-client/v5/apiv1/system"
-	"github.com/aobco/goharbor-client/v5/apiv1/user"
+	"github.com/aobco/harbor-client/apiv1/project"
+	"github.com/aobco/harbor-client/apiv1/registry"
+	"github.com/aobco/harbor-client/apiv1/replication"
+	"github.com/aobco/harbor-client/apiv1/system"
+	"github.com/aobco/harbor-client/apiv1/user"
 
-	"github.com/aobco/goharbor-client/v5/apiv1/model"
+	"github.com/aobco/harbor-client/apiv1/model"
 )
 
 // Client is an interface that groups all sub-package methods.

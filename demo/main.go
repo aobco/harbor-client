@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"github.com/aobco/goharbor-client/v5/apiv2"
-	"github.com/aobco/goharbor-client/v5/apiv2/pkg/config"
+	"github.com/aobco/harbor-client/apiv2"
+	"github.com/aobco/harbor-client/apiv2/pkg/config"
 	"github.com/aobco/log"
 	"time"
 )

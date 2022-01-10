@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/goharbor-client/v5/apiv1/model"
+	"github.com/aobco/harbor-client/apiv1/model"
 )
 
 // NewPostReplicationPoliciesParams creates a new PostReplicationPoliciesParams object

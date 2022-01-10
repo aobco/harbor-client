@@ -9,8 +9,8 @@ This library includes separate clients supporting the **v1.10** & **v2.4** versi
 ## Installation
 ```shell script
 # v1 Client
-go get github.com/aobco/goharbor-client/v5/apiv1
+go get github.com/aobco/harbor-client/apiv1
 
 # v2 Client
-go get github.com/aobco/goharbor-client/v5/apiv2
+go get github.com/aobco/harbor-client/apiv2
 ```

@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	icon "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/icon"
+	icon "github.com/aobco/harbor-client/apiv2/internal/api/client/icon"
 	mock "github.com/stretchr/testify/mock"
 
 	runtime "github.com/go-openapi/runtime"

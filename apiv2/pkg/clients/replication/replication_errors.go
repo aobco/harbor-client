@@ -5,8 +5,8 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	replicationapi "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/replication"
-	"github.com/aobco/goharbor-client/v5/apiv2/pkg/errors"
+	replicationapi "github.com/aobco/harbor-client/apiv2/internal/api/client/replication"
+	"github.com/aobco/harbor-client/apiv2/pkg/errors"
 )
 
 const (

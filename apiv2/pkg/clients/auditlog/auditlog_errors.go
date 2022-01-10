@@ -5,8 +5,8 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/auditlog"
-	"github.com/aobco/goharbor-client/v5/apiv2/pkg/errors"
+	"github.com/aobco/harbor-client/apiv2/internal/api/client/auditlog"
+	"github.com/aobco/harbor-client/apiv2/pkg/errors"
 )
 
 // handleSwaggerAuditLogErrors takes a swagger generated error as input,

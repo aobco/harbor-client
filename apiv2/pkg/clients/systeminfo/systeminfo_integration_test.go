@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	clienttesting "github.com/aobco/goharbor-client/v5/apiv2/pkg/testing"
+	clienttesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
 )
 
 func TestAPIGetSystemInfo(t *testing.T) {

@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	oidc "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/oidc"
+	oidc "github.com/aobco/harbor-client/apiv2/internal/api/client/oidc"
 	runtime "github.com/go-openapi/runtime"
 	mock "github.com/stretchr/testify/mock"
 )

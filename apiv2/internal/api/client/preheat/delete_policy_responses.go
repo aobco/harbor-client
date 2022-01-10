@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/goharbor-client/v5/apiv2/model"
+	"github.com/aobco/harbor-client/apiv2/model"
 )
 
 // DeletePolicyReader is a Reader for the DeletePolicy structure.

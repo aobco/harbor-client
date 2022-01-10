@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	preheat "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/preheat"
+	preheat "github.com/aobco/harbor-client/apiv2/internal/api/client/preheat"
 	runtime "github.com/go-openapi/runtime"
 	mock "github.com/stretchr/testify/mock"
 )

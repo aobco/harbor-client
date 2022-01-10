@@ -6,11 +6,11 @@ import (
 
 	"k8s.io/apimachinery/pkg/util/intstr"
 
-	v2client "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client"
-	"github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/user"
-	modelv2 "github.com/aobco/goharbor-client/v5/apiv2/model"
-	"github.com/aobco/goharbor-client/v5/apiv2/pkg/config"
-	clienterrors "github.com/aobco/goharbor-client/v5/apiv2/pkg/errors"
+	v2client "github.com/aobco/harbor-client/apiv2/internal/api/client"
+	"github.com/aobco/harbor-client/apiv2/internal/api/client/user"
+	modelv2 "github.com/aobco/harbor-client/apiv2/model"
+	"github.com/aobco/harbor-client/apiv2/pkg/config"
+	clienterrors "github.com/aobco/harbor-client/apiv2/pkg/errors"
 
 	"github.com/go-openapi/runtime"
 )

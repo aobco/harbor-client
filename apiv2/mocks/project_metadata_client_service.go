@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	project_metadata "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/project_metadata"
+	project_metadata "github.com/aobco/harbor-client/apiv2/internal/api/client/project_metadata"
 	runtime "github.com/go-openapi/runtime"
 	mock "github.com/stretchr/testify/mock"
 )
