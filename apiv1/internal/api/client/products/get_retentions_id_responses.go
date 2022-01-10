@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/harbor-client/apiv1/model"
+	"github.com/aobco/harbor-client/v5/apiv1/model"
 )
 
 // GetRetentionsIDReader is a Reader for the GetRetentionsID structure.

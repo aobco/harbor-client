@@ -3,11 +3,11 @@ package replication
 import (
 	"context"
 
-	"github.com/aobco/harbor-client/apiv1/internal/api/client"
+	"github.com/aobco/harbor-client/v5/apiv1/internal/api/client"
 	"github.com/go-openapi/runtime"
 
-	"github.com/aobco/harbor-client/apiv1/internal/api/client/products"
-	model "github.com/aobco/harbor-client/apiv1/model"
+	"github.com/aobco/harbor-client/v5/apiv1/internal/api/client/products"
+	model "github.com/aobco/harbor-client/v5/apiv1/model"
 )
 
 // RESTClient is a subclient for handling replication related actions.

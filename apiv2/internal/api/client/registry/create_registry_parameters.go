@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/harbor-client/apiv2/model"
+	"github.com/aobco/harbor-client/v5/apiv2/model"
 )
 
 // NewCreateRegistryParams creates a new CreateRegistryParams object

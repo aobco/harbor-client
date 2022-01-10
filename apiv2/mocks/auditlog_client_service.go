@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	auditlog "github.com/aobco/harbor-client/apiv2/internal/api/client/auditlog"
+	auditlog "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/auditlog"
 	mock "github.com/stretchr/testify/mock"
 
 	runtime "github.com/go-openapi/runtime"

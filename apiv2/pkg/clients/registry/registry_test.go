@@ -9,11 +9,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aobco/harbor-client/apiv2/internal/api/client/registry"
-	modelv2 "github.com/aobco/harbor-client/apiv2/model"
-	unittesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
+	"github.com/aobco/harbor-client/v5/apiv2/internal/api/client/registry"
+	modelv2 "github.com/aobco/harbor-client/v5/apiv2/model"
+	unittesting "github.com/aobco/harbor-client/v5/apiv2/pkg/testing"
 
-	"github.com/aobco/harbor-client/apiv2/mocks"
+	"github.com/aobco/harbor-client/v5/apiv2/mocks"
 
 	runtimeclient "github.com/go-openapi/runtime/client"
 )

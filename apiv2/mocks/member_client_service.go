@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	member "github.com/aobco/harbor-client/apiv2/internal/api/client/member"
+	member "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/member"
 	mock "github.com/stretchr/testify/mock"
 
 	runtime "github.com/go-openapi/runtime"

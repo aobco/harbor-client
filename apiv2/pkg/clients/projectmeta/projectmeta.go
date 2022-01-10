@@ -5,11 +5,11 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	v2client "github.com/aobco/harbor-client/apiv2/internal/api/client"
-	projectmeta "github.com/aobco/harbor-client/apiv2/internal/api/client/project_metadata"
-	"github.com/aobco/harbor-client/apiv2/pkg/common"
-	"github.com/aobco/harbor-client/apiv2/pkg/config"
-	"github.com/aobco/harbor-client/apiv2/pkg/errors"
+	v2client "github.com/aobco/harbor-client/v5/apiv2/internal/api/client"
+	projectmeta "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/project_metadata"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/common"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/config"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/errors"
 )
 
 // RESTClient is a subclient for handling webhook related actions.

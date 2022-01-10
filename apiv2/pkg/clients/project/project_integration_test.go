@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"testing"
 
-	modelv2 "github.com/aobco/harbor-client/apiv2/model"
-	"github.com/aobco/harbor-client/apiv2/pkg/clients/registry"
-	clienterrors "github.com/aobco/harbor-client/apiv2/pkg/errors"
-	clienttesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
+	modelv2 "github.com/aobco/harbor-client/v5/apiv2/model"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/registry"
+	clienterrors "github.com/aobco/harbor-client/v5/apiv2/pkg/errors"
+	clienttesting "github.com/aobco/harbor-client/v5/apiv2/pkg/testing"
 
 	"github.com/stretchr/testify/require"
 )

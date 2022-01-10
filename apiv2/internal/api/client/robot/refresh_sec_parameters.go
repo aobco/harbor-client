@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/aobco/harbor-client/apiv2/model"
+	"github.com/aobco/harbor-client/v5/apiv2/model"
 )
 
 // NewRefreshSecParams creates a new RefreshSecParams object

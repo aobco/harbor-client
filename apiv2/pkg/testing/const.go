@@ -6,9 +6,9 @@ import (
 	runtimeclient "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	v2client "github.com/aobco/harbor-client/apiv2/internal/api/client"
-	"github.com/aobco/harbor-client/apiv2/mocks"
-	"github.com/aobco/harbor-client/apiv2/pkg/config"
+	v2client "github.com/aobco/harbor-client/v5/apiv2/internal/api/client"
+	"github.com/aobco/harbor-client/v5/apiv2/mocks"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/config"
 )
 
 const (

@@ -10,11 +10,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	projectmeta "github.com/aobco/harbor-client/apiv2/internal/api/client/project_metadata"
-	"github.com/aobco/harbor-client/apiv2/mocks"
-	"github.com/aobco/harbor-client/apiv2/pkg/common"
-	"github.com/aobco/harbor-client/apiv2/pkg/errors"
-	clienttesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
+	projectmeta "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/project_metadata"
+	"github.com/aobco/harbor-client/v5/apiv2/mocks"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/common"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/errors"
+	clienttesting "github.com/aobco/harbor-client/v5/apiv2/pkg/testing"
 )
 
 var (

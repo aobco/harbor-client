@@ -9,17 +9,17 @@ import (
 
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/harbor-client/apiv1/internal/api/client"
-	integrationtest "github.com/aobco/harbor-client/apiv1/testing"
+	"github.com/aobco/harbor-client/v5/apiv1/internal/api/client"
+	integrationtest "github.com/aobco/harbor-client/v5/apiv1/testing"
 
 	runtimeclient "github.com/go-openapi/runtime/client"
 
-	"github.com/aobco/harbor-client/apiv1/registry"
+	"github.com/aobco/harbor-client/v5/apiv1/registry"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aobco/harbor-client/apiv1/model"
+	"github.com/aobco/harbor-client/v5/apiv1/model"
 )
 
 var (

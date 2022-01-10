@@ -9,10 +9,10 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aobco/harbor-client/apiv2/internal/api/client/robot"
-	"github.com/aobco/harbor-client/apiv2/mocks"
-	modelv2 "github.com/aobco/harbor-client/apiv2/model"
-	clienttesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
+	"github.com/aobco/harbor-client/v5/apiv2/internal/api/client/robot"
+	"github.com/aobco/harbor-client/v5/apiv2/mocks"
+	modelv2 "github.com/aobco/harbor-client/v5/apiv2/model"
+	clienttesting "github.com/aobco/harbor-client/v5/apiv2/pkg/testing"
 )
 
 var (

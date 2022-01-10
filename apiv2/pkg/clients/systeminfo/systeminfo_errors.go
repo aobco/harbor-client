@@ -1,8 +1,8 @@
 package systeminfo
 
 import (
-	"github.com/aobco/harbor-client/apiv2/internal/api/client/systeminfo"
-	"github.com/aobco/harbor-client/apiv2/pkg/errors"
+	"github.com/aobco/harbor-client/v5/apiv2/internal/api/client/systeminfo"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/errors"
 )
 
 // handleSwaggerSystemInfoErrors takes a swagger generated error as input,

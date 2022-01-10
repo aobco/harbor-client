@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	ping "github.com/aobco/harbor-client/apiv2/internal/api/client/ping"
+	ping "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/ping"
 	runtime "github.com/go-openapi/runtime"
 	mock "github.com/stretchr/testify/mock"
 )

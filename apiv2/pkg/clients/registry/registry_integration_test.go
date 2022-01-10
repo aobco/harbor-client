@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"testing"
 
-	modelv2 "github.com/aobco/harbor-client/apiv2/model"
+	modelv2 "github.com/aobco/harbor-client/v5/apiv2/model"
 
-	clienttesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
+	clienttesting "github.com/aobco/harbor-client/v5/apiv2/pkg/testing"
 
 	"github.com/stretchr/testify/require"
 )

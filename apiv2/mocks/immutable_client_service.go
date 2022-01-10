@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	immutable "github.com/aobco/harbor-client/apiv2/internal/api/client/immutable"
+	immutable "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/immutable"
 	mock "github.com/stretchr/testify/mock"
 
 	runtime "github.com/go-openapi/runtime"

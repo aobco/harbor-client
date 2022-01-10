@@ -8,10 +8,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	modelv2 "github.com/aobco/harbor-client/apiv2/model"
-	"github.com/aobco/harbor-client/apiv2/pkg/clients/project"
+	modelv2 "github.com/aobco/harbor-client/v5/apiv2/model"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/project"
 
-	clienttesting "github.com/aobco/harbor-client/apiv2/pkg/testing"
+	clienttesting "github.com/aobco/harbor-client/v5/apiv2/pkg/testing"
 )
 
 var (

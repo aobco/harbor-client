@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	quota "github.com/aobco/harbor-client/apiv2/internal/api/client/quota"
+	quota "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/quota"
 	runtime "github.com/go-openapi/runtime"
 	mock "github.com/stretchr/testify/mock"
 )

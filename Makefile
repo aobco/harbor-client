@@ -40,8 +40,8 @@ setup-harbor-v2:
 test:
 	go test -v ./...
 
-INTREGRATION_V1 = CGO_ENABLED=0 go test -p 1 -count 1 -v github.com/aobco/harbor-client/apiv1/... -tags integration
-INTEGRATION_V2 = CGO_ENABLED=0 go test -p 1 -count 1 -v github.com/aobco/harbor-client/apiv2/... -tags integration
+INTREGRATION_V1 = CGO_ENABLED=0 go test -p 1 -count 1 -v github.com/aobco/harbor-client/v5/apiv1/... -tags integration
+INTEGRATION_V2 = CGO_ENABLED=0 go test -p 1 -count 1 -v github.com/aobco/harbor-client/v5/apiv2/... -tags integration
 
 # Integration testing (CI Jobs)
 integration-test-v1-ci: setup-harbor-v1

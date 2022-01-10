@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/aobco/harbor-client/apiv1/model"
+	"github.com/aobco/harbor-client/v5/apiv1/model"
 )
 
 // NewPostProjectsParams creates a new PostProjectsParams object

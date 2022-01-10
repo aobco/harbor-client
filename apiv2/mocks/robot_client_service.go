@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	robot "github.com/aobco/harbor-client/apiv2/internal/api/client/robot"
+	robot "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/robot"
 	runtime "github.com/go-openapi/runtime"
 	mock "github.com/stretchr/testify/mock"
 )
