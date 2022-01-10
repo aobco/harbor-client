@@ -3,8 +3,8 @@
 package mocks
 
 import (
+	retention "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/retention"
 	runtime "github.com/go-openapi/runtime"
-	retention "github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/retention"
 	mock "github.com/stretchr/testify/mock"
 )
 

@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
+	"github.com/aobco/goharbor-client/v5/apiv2"
+	"github.com/aobco/goharbor-client/v5/apiv2/pkg/config"
 	"github.com/aobco/log"
-	"github.com/mittwald/goharbor-client/v5/apiv2"
-	"github.com/mittwald/goharbor-client/v5/apiv2/pkg/config"
 	"time"
 )
 
@@ -20,7 +20,7 @@ var (
 		Sort:     "",
 		Query:    "",
 	}
-	harborClient, _ = apiv2.NewRESTClientForHost("http://192.168.10.201:7508/api", "admin", "*******", opts)
+	harborClient, _ = apiv2.NewRESTClientForHost("http://192.168.10.201:7508/api", "admin", "Xsky@123", opts)
 	ctx             = context.Background()
 )
 

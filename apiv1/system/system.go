@@ -3,11 +3,11 @@ package system
 import (
 	"context"
 
+	"github.com/aobco/goharbor-client/v5/apiv1/internal/api/client"
 	"github.com/go-openapi/runtime"
-	"github.com/mittwald/goharbor-client/v5/apiv1/internal/api/client"
 
-	"github.com/mittwald/goharbor-client/v5/apiv1/internal/api/client/products"
-	"github.com/mittwald/goharbor-client/v5/apiv1/model"
+	"github.com/aobco/goharbor-client/v5/apiv1/internal/api/client/products"
+	"github.com/aobco/goharbor-client/v5/apiv1/model"
 )
 
 // RESTClient is a subclient for handling system related actions.

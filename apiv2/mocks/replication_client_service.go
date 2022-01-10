@@ -3,8 +3,8 @@
 package mocks
 
 import (
+	replication "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/replication"
 	runtime "github.com/go-openapi/runtime"
-	replication "github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/replication"
 	mock "github.com/stretchr/testify/mock"
 )
 

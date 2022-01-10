@@ -3,8 +3,8 @@
 package mocks
 
 import (
+	robot "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/robot"
 	runtime "github.com/go-openapi/runtime"
-	robot "github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/robot"
 	mock "github.com/stretchr/testify/mock"
 )
 

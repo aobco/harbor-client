@@ -6,12 +6,12 @@ import (
 	"context"
 	"testing"
 
-	modelv2 "github.com/mittwald/goharbor-client/v5/apiv2/model"
-	clienttesting "github.com/mittwald/goharbor-client/v5/apiv2/pkg/testing"
+	modelv2 "github.com/aobco/goharbor-client/v5/apiv2/model"
+	clienttesting "github.com/aobco/goharbor-client/v5/apiv2/pkg/testing"
 
 	"github.com/stretchr/testify/require"
 
-	pc "github.com/mittwald/goharbor-client/v5/apiv2/pkg/clients/project"
+	pc "github.com/aobco/goharbor-client/v5/apiv2/pkg/clients/project"
 )
 
 var storageLimit int64 = 1

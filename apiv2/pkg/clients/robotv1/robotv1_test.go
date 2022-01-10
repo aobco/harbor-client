@@ -12,10 +12,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/robotv1"
-	"github.com/mittwald/goharbor-client/v5/apiv2/mocks"
-	modelv2 "github.com/mittwald/goharbor-client/v5/apiv2/model"
-	clienttesting "github.com/mittwald/goharbor-client/v5/apiv2/pkg/testing"
+	"github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/robotv1"
+	"github.com/aobco/goharbor-client/v5/apiv2/mocks"
+	modelv2 "github.com/aobco/goharbor-client/v5/apiv2/model"
+	clienttesting "github.com/aobco/goharbor-client/v5/apiv2/pkg/testing"
 )
 
 var (

@@ -10,12 +10,12 @@ import (
 
 	"github.com/go-openapi/strfmt"
 
-	"github.com/mittwald/goharbor-client/v5/apiv1/internal/api/client"
-	integrationtest "github.com/mittwald/goharbor-client/v5/apiv1/testing"
+	"github.com/aobco/goharbor-client/v5/apiv1/internal/api/client"
+	integrationtest "github.com/aobco/goharbor-client/v5/apiv1/testing"
 
 	runtimeclient "github.com/go-openapi/runtime/client"
 
-	uc "github.com/mittwald/goharbor-client/v5/apiv1/user"
+	uc "github.com/aobco/goharbor-client/v5/apiv1/user"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

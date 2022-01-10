@@ -11,14 +11,14 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/stretchr/testify/require"
 
-	projectapi "github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/project"
-	modelv2 "github.com/mittwald/goharbor-client/v5/apiv2/model"
-	"github.com/mittwald/goharbor-client/v5/apiv2/pkg/errors"
-	clienttesting "github.com/mittwald/goharbor-client/v5/apiv2/pkg/testing"
+	projectapi "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/project"
+	modelv2 "github.com/aobco/goharbor-client/v5/apiv2/model"
+	"github.com/aobco/goharbor-client/v5/apiv2/pkg/errors"
+	clienttesting "github.com/aobco/goharbor-client/v5/apiv2/pkg/testing"
 
 	"github.com/stretchr/testify/mock"
 
-	"github.com/mittwald/goharbor-client/v5/apiv2/mocks"
+	"github.com/aobco/goharbor-client/v5/apiv2/mocks"
 )
 
 var (

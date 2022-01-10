@@ -4,13 +4,13 @@ import (
 	"context"
 	"errors"
 
-	uc "github.com/mittwald/goharbor-client/v5/apiv1/user"
+	uc "github.com/aobco/goharbor-client/v5/apiv1/user"
 
-	"github.com/mittwald/goharbor-client/v5/apiv1/internal/api/client"
+	"github.com/aobco/goharbor-client/v5/apiv1/internal/api/client"
 
+	"github.com/aobco/goharbor-client/v5/apiv1/internal/api/client/products"
+	"github.com/aobco/goharbor-client/v5/apiv1/model"
 	"github.com/go-openapi/runtime"
-	"github.com/mittwald/goharbor-client/v5/apiv1/internal/api/client/products"
-	"github.com/mittwald/goharbor-client/v5/apiv1/model"
 )
 
 const (

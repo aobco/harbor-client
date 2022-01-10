@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/auditlog"
-	"github.com/mittwald/goharbor-client/v5/apiv2/mocks"
-	clienttesting "github.com/mittwald/goharbor-client/v5/apiv2/pkg/testing"
+	"github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/auditlog"
+	"github.com/aobco/goharbor-client/v5/apiv2/mocks"
+	clienttesting "github.com/aobco/goharbor-client/v5/apiv2/pkg/testing"
 )
 
 var ctx = context.Background()

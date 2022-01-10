@@ -3,8 +3,8 @@
 package mocks
 
 import (
+	quota "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/quota"
 	runtime "github.com/go-openapi/runtime"
-	quota "github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/quota"
 	mock "github.com/stretchr/testify/mock"
 )
 

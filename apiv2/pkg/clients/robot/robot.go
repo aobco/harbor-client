@@ -5,11 +5,11 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	v2client "github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client"
-	"github.com/mittwald/goharbor-client/v5/apiv2/internal/api/client/robot"
-	modelv2 "github.com/mittwald/goharbor-client/v5/apiv2/model"
-	"github.com/mittwald/goharbor-client/v5/apiv2/pkg/config"
-	"github.com/mittwald/goharbor-client/v5/apiv2/pkg/errors"
+	v2client "github.com/aobco/goharbor-client/v5/apiv2/internal/api/client"
+	"github.com/aobco/goharbor-client/v5/apiv2/internal/api/client/robot"
+	modelv2 "github.com/aobco/goharbor-client/v5/apiv2/model"
+	"github.com/aobco/goharbor-client/v5/apiv2/pkg/config"
+	"github.com/aobco/goharbor-client/v5/apiv2/pkg/errors"
 )
 
 const (
