@@ -1,4 +1,4 @@
-module github.com/aobco/harbor-client
+module github.com/aobco/harbor-client/v5
 
 go 1.17
 
