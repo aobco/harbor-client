@@ -17,6 +17,7 @@ require (
 require (
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
+	github.com/aobco/log v1.2.7
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
 	github.com/astaxie/beego v1.12.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
@@ -57,6 +58,8 @@ require (
 	go.opentelemetry.io/otel/sdk v1.0.0 // indirect
 	go.opentelemetry.io/otel/trace v1.0.0 // indirect
 	go.opentelemetry.io/proto/otlp v0.9.0 // indirect
+	go.uber.org/atomic v1.9.0 // indirect
+	go.uber.org/multierr v1.7.0 // indirect
 	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83 // indirect
 	golang.org/x/net v0.0.0-20210902165921-8d991716f632 // indirect
 	golang.org/x/sys v0.0.0-20210910150752-751e447fb3d0 // indirect
