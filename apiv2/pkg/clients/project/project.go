@@ -3,7 +3,7 @@ package project
 import (
 	"context"
 	"errors"
-
+	"fmt"
 	projectapi "github.com/aobco/harbor-client/v5/apiv2/internal/api/client/project"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/config"
 	clienterrors "github.com/aobco/harbor-client/v5/apiv2/pkg/errors"
@@ -193,5 +193,27 @@ func (c *RESTClient) ProjectExists(ctx context.Context, nameOrID string) (bool, 
 		}
 	}
 
+	return true, nil
+}
+
+func (c *RESTClient) HeadProject(ctx context.Context, name string) (bool, error) {
+	if name == "" {
+		return false, &clienterrors.ErrProjectNameNotProvided{}
+	}
+	params := &projectapi.HeadProjectParams{
+		ProjectName: name,
+		Context:     ctx,
+	}
+	params.WithTimeout(c.Options.Timeout)
+	_, err := c.V2Client.Project.HeadProject(params, c.AuthInfo)
+	if err != nil {
+		switch err.(type) {
+		case *projectapi.HeadProjectNotFound:
+			return false, nil
+		default:
+			fmt.Errorf("%v\n", err)
+			return false, err
+		}
+	}
 	return true, nil
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"github.com/aobco/harbor-client/v5/apiv2"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/config"
 	"github.com/aobco/log"
@@ -25,6 +26,7 @@ var (
 )
 
 func main() {
+	println("================================= ListUsers")
 	listUsers, err := harborClient.ListUsers(ctx)
 	if err != nil {
 		log.Errorf("%v", err)
@@ -33,11 +35,18 @@ func main() {
 	for i, user := range listUsers {
 		println(i, user.Username)
 	}
-
+	println("================================= GetUserByName")
 	u, err := harborClient.GetUserByName(ctx, "lb")
 	if err != nil {
 		log.Errorf("%v", err)
 		panic(err)
 	}
 	println(u.Username)
+	println("================================= Head Project")
+	h, err := harborClient.HeadProject(ctx, "cqh5")
+	if err != nil {
+		log.Errorf("%v", err)
+		panic(err)
+	}
+	fmt.Printf("%v\n", h)
 }

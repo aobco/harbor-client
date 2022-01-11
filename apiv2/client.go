@@ -190,6 +190,10 @@ func (c *RESTClient) UpdateProject(ctx context.Context, p *modelv2.Project, stor
 	return c.project.UpdateProject(ctx, p, storageLimit)
 }
 
+func (c *RESTClient) HeadProject(ctx context.Context, projectName string) (bool, error) {
+	return c.project.HeadProject(ctx, projectName)
+}
+
 func (c *RESTClient) ProjectExists(ctx context.Context, nameOrID string) (bool, error) {
 	return c.project.ProjectExists(ctx, nameOrID)
 }
