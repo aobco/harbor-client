@@ -2,6 +2,7 @@ package apiv2
 
 import (
 	"context"
+	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/artifact"
 	"net/url"
 	"strings"
 
@@ -71,6 +72,7 @@ type RESTClient struct {
 	systeminfo  *systeminfo.RESTClient
 	user        *user.RESTClient
 	webhook     *webhook.RESTClient
+	artifact    *artifact.RESTClient
 }
 
 // NewRESTClient constructs a new REST client containing each sub client.
@@ -95,6 +97,7 @@ func NewRESTClient(v2Client *v2client.Harbor, opts *config.Options, authInfo run
 		systeminfo:  systeminfo.NewClient(v2Client, opts, authInfo),
 		user:        user.NewClient(v2Client, opts, authInfo),
 		webhook:     webhook.NewClient(v2Client, opts, authInfo),
+		artifact:    artifact.NewClient(v2Client, opts, authInfo),
 	}
 }
 
@@ -453,4 +456,8 @@ func (c *RESTClient) UpdateProjectWebhookPolicy(ctx context.Context, projectID i
 
 func (c *RESTClient) DeleteProjectWebhookPolicy(ctx context.Context, projectID int, policyID int64) error {
 	return c.webhook.DeleteProjectWebhookPolicy(ctx, projectID, policyID)
+}
+
+func (c *RESTClient) DeleteArtifact(ctx context.Context, projectName, repositoryName, reference string) error {
+	return c.artifact.DeleteArtifact(ctx, projectName, repositoryName, reference)
 }
