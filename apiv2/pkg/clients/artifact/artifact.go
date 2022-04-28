@@ -4,6 +4,7 @@ import (
 	"context"
 	v2client "github.com/aobco/harbor-client/v5/apiv2/internal/api/client"
 	"github.com/aobco/harbor-client/v5/apiv2/internal/api/client/artifact"
+	"github.com/aobco/harbor-client/v5/apiv2/model"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/config"
 	clienterrors "github.com/aobco/harbor-client/v5/apiv2/pkg/errors"
 	"github.com/go-openapi/runtime"
@@ -56,4 +57,30 @@ func (c *RESTClient) DeleteArtifact(ctx context.Context, projectName, repository
 	_, err := c.V2Client.Artifact.DeleteArtifact(params, c.AuthInfo)
 
 	return handleSwaggerArtifactErrors(err)
+}
+
+func (c *RESTClient) Artifacts(ctx context.Context, projectName, repositoryName string) ([]*model.Artifact, error) {
+	if projectName == "" {
+		return nil, &clienterrors.ErrProjectNameNotProvided{}
+	}
+	if repositoryName == "" {
+		return nil, &clienterrors.ErrRepositoryNameNotProvided{}
+	}
+	pushTime := "push_time"
+	withTag := true
+	params := &artifact.ListArtifactsParams{
+		ProjectName:    projectName,
+		RepositoryName: repositoryName,
+		Context:        ctx,
+		Sort:           &pushTime,
+		WithTag:        &withTag,
+	}
+
+	params.WithTimeout(c.Options.Timeout)
+
+	listArtifactsOK, err := c.V2Client.Artifact.ListArtifacts(params, c.AuthInfo)
+	if err != nil {
+		return nil, handleSwaggerArtifactErrors(err)
+	}
+	return listArtifactsOK.GetPayload(), nil
 }

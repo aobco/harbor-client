@@ -3,12 +3,13 @@ package apiv2
 import (
 	"context"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/artifact"
+
 	"net/url"
 	"strings"
 
 	"k8s.io/apimachinery/pkg/util/intstr"
 
-	modelv2 "github.com/aobco/harbor-client/v5/apiv2/model"
+	"github.com/aobco/harbor-client/v5/apiv2/model"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/auditlog"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/gc"
 	"github.com/aobco/harbor-client/v5/apiv2/pkg/clients/health"
@@ -121,25 +122,25 @@ func NewRESTClientForHost(u, username, password string, opts *config.Options) (*
 
 // AuditLog Client
 
-func (c *RESTClient) ListAuditLogs(ctx context.Context) ([]*modelv2.AuditLog, error) {
+func (c *RESTClient) ListAuditLogs(ctx context.Context) ([]*model.AuditLog, error) {
 	return c.auditlog.ListAuditLogs(ctx)
 }
 
 // GC Client
 
-func (c *RESTClient) NewGarbageCollection(ctx context.Context, gcSchedule *modelv2.Schedule) error {
+func (c *RESTClient) NewGarbageCollection(ctx context.Context, gcSchedule *model.Schedule) error {
 	return c.gc.NewGarbageCollection(ctx, gcSchedule)
 }
 
-func (c *RESTClient) UpdateGarbageCollection(ctx context.Context, newGCSchedule *modelv2.Schedule) error {
+func (c *RESTClient) UpdateGarbageCollection(ctx context.Context, newGCSchedule *model.Schedule) error {
 	return c.gc.UpdateGarbageCollection(ctx, newGCSchedule)
 }
 
-func (c *RESTClient) GetGarbageCollectionExecution(ctx context.Context, id int64) (*modelv2.GCHistory, error) {
+func (c *RESTClient) GetGarbageCollectionExecution(ctx context.Context, id int64) (*model.GCHistory, error) {
 	return c.gc.GetGarbageCollectionExecution(ctx, id)
 }
 
-func (c *RESTClient) GetGarbageCollectionSchedule(ctx context.Context) (*modelv2.GCHistory, error) {
+func (c *RESTClient) GetGarbageCollectionSchedule(ctx context.Context) (*model.GCHistory, error) {
 	return c.gc.GetGarbageCollectionSchedule(ctx)
 }
 
@@ -149,31 +150,31 @@ func (c *RESTClient) ResetGarbageCollection(ctx context.Context) error {
 
 // Health Client
 
-func (c *RESTClient) GetHealth(ctx context.Context) (*modelv2.OverallHealthStatus, error) {
+func (c *RESTClient) GetHealth(ctx context.Context) (*model.OverallHealthStatus, error) {
 	return c.health.GetHealth(ctx)
 }
 
 // Member Client
 
-func (c *RESTClient) AddProjectMember(ctx context.Context, projectNameOrID string, m *modelv2.ProjectMember) error {
+func (c *RESTClient) AddProjectMember(ctx context.Context, projectNameOrID string, m *model.ProjectMember) error {
 	return c.member.AddProjectMember(ctx, projectNameOrID, m)
 }
 
-func (c *RESTClient) ListProjectMembers(ctx context.Context, projectNameOrID, memberQuery string) ([]*modelv2.ProjectMemberEntity, error) {
+func (c *RESTClient) ListProjectMembers(ctx context.Context, projectNameOrID, memberQuery string) ([]*model.ProjectMemberEntity, error) {
 	return c.member.ListProjectMembers(ctx, projectNameOrID, memberQuery)
 }
 
-func (c *RESTClient) UpdateProjectMember(ctx context.Context, projectNameOrID string, m *modelv2.ProjectMember) error {
+func (c *RESTClient) UpdateProjectMember(ctx context.Context, projectNameOrID string, m *model.ProjectMember) error {
 	return c.member.UpdateProjectMember(ctx, projectNameOrID, m)
 }
 
-func (c *RESTClient) DeleteProjectMember(ctx context.Context, projectNameOrID string, m *modelv2.ProjectMember) error {
+func (c *RESTClient) DeleteProjectMember(ctx context.Context, projectNameOrID string, m *model.ProjectMember) error {
 	return c.member.DeleteProjectMember(ctx, projectNameOrID, m)
 }
 
 // Project Client
 
-func (c *RESTClient) NewProject(ctx context.Context, projectRequest *modelv2.ProjectReq) error {
+func (c *RESTClient) NewProject(ctx context.Context, projectRequest *model.ProjectReq) error {
 	return c.project.NewProject(ctx, projectRequest)
 }
 
@@ -181,15 +182,15 @@ func (c *RESTClient) DeleteProject(ctx context.Context, nameOrID string) error {
 	return c.project.DeleteProject(ctx, nameOrID)
 }
 
-func (c *RESTClient) GetProject(ctx context.Context, nameOrID string) (*modelv2.Project, error) {
+func (c *RESTClient) GetProject(ctx context.Context, nameOrID string) (*model.Project, error) {
 	return c.project.GetProject(ctx, nameOrID)
 }
 
-func (c *RESTClient) ListProjects(ctx context.Context, nameFilter string) ([]*modelv2.Project, error) {
+func (c *RESTClient) ListProjects(ctx context.Context, nameFilter string) ([]*model.Project, error) {
 	return c.project.ListProjects(ctx, nameFilter)
 }
 
-func (c *RESTClient) UpdateProject(ctx context.Context, p *modelv2.Project, storageLimit *int64) error {
+func (c *RESTClient) UpdateProject(ctx context.Context, p *model.Project, storageLimit *int64) error {
 	return c.project.UpdateProject(ctx, p, storageLimit)
 }
 
@@ -225,11 +226,11 @@ func (c *RESTClient) DeleteProjectMetadataValue(ctx context.Context, projectName
 
 // Quota Client
 
-func (c *RESTClient) ListQuotas(ctx context.Context, referenceType, referenceID *string) ([]*modelv2.Quota, error) {
+func (c *RESTClient) ListQuotas(ctx context.Context, referenceType, referenceID *string) ([]*model.Quota, error) {
 	return c.quota.ListQuotas(ctx, referenceType, referenceID)
 }
 
-func (c *RESTClient) GetQuotaByProjectID(ctx context.Context, projectID int64) (*modelv2.Quota, error) {
+func (c *RESTClient) GetQuotaByProjectID(ctx context.Context, projectID int64) (*model.Quota, error) {
 	return c.quota.GetQuotaByProjectID(ctx, projectID)
 }
 
@@ -239,19 +240,19 @@ func (c *RESTClient) UpdateStorageQuotaByProjectID(ctx context.Context, projectI
 
 // Registry Client
 
-func (c *RESTClient) NewRegistry(ctx context.Context, reg *modelv2.Registry) error {
+func (c *RESTClient) NewRegistry(ctx context.Context, reg *model.Registry) error {
 	return c.registry.NewRegistry(ctx, reg)
 }
 
-func (c *RESTClient) GetRegistryByID(ctx context.Context, id int64) (*modelv2.Registry, error) {
+func (c *RESTClient) GetRegistryByID(ctx context.Context, id int64) (*model.Registry, error) {
 	return c.registry.GetRegistryByID(ctx, id)
 }
 
-func (c *RESTClient) GetRegistryByName(ctx context.Context, name string) (*modelv2.Registry, error) {
+func (c *RESTClient) GetRegistryByName(ctx context.Context, name string) (*model.Registry, error) {
 	return c.registry.GetRegistryByName(ctx, name)
 }
 
-func (c *RESTClient) ListRegistries(ctx context.Context) ([]*modelv2.Registry, error) {
+func (c *RESTClient) ListRegistries(ctx context.Context) ([]*model.Registry, error) {
 	return c.registry.ListRegistries(ctx)
 }
 
@@ -259,30 +260,30 @@ func (c *RESTClient) DeleteRegistryByID(ctx context.Context, id int64) error {
 	return c.registry.DeleteRegistryByID(ctx, id)
 }
 
-func (c *RESTClient) UpdateRegistry(ctx context.Context, u *modelv2.RegistryUpdate, id int64) error {
+func (c *RESTClient) UpdateRegistry(ctx context.Context, u *model.RegistryUpdate, id int64) error {
 	return c.registry.UpdateRegistry(ctx, u, id)
 }
 
 // Replication Client
 
-func (c *RESTClient) NewReplicationPolicy(ctx context.Context, destRegistry, srcRegistry *modelv2.Registry,
+func (c *RESTClient) NewReplicationPolicy(ctx context.Context, destRegistry, srcRegistry *model.Registry,
 	replicateDeletion, override, enablePolicy bool,
-	filters []*modelv2.ReplicationFilter, trigger *modelv2.ReplicationTrigger,
+	filters []*model.ReplicationFilter, trigger *model.ReplicationTrigger,
 	destNamespace, description, name string) error {
 	return c.replication.NewReplicationPolicy(ctx, destRegistry, srcRegistry,
 		replicateDeletion, override, enablePolicy,
 		filters, trigger, destNamespace, description, name)
 }
 
-func (c *RESTClient) GetReplicationPolicyByName(ctx context.Context, name string) (*modelv2.ReplicationPolicy, error) {
+func (c *RESTClient) GetReplicationPolicyByName(ctx context.Context, name string) (*model.ReplicationPolicy, error) {
 	return c.replication.GetReplicationPolicyByName(ctx, name)
 }
 
-func (c *RESTClient) ListReplicationPolicies(ctx context.Context) ([]*modelv2.ReplicationPolicy, error) {
+func (c *RESTClient) ListReplicationPolicies(ctx context.Context) ([]*model.ReplicationPolicy, error) {
 	return c.replication.ListReplicationPolicies(ctx)
 }
 
-func (c *RESTClient) GetReplicationPolicyByID(ctx context.Context, id int64) (*modelv2.ReplicationPolicy, error) {
+func (c *RESTClient) GetReplicationPolicyByID(ctx context.Context, id int64) (*model.ReplicationPolicy, error) {
 	return c.replication.GetReplicationPolicyByID(ctx, id)
 }
 
@@ -290,33 +291,33 @@ func (c *RESTClient) DeleteReplicationPolicyByID(ctx context.Context, id int64) 
 	return c.replication.DeleteReplicationPolicyByID(ctx, id)
 }
 
-func (c *RESTClient) UpdateReplicationPolicy(ctx context.Context, r *modelv2.ReplicationPolicy, id int64) error {
+func (c *RESTClient) UpdateReplicationPolicy(ctx context.Context, r *model.ReplicationPolicy, id int64) error {
 	return c.replication.UpdateReplicationPolicy(ctx, r, id)
 }
 
-func (c *RESTClient) TriggerReplicationExecution(ctx context.Context, r *modelv2.StartReplicationExecution) error {
+func (c *RESTClient) TriggerReplicationExecution(ctx context.Context, r *model.StartReplicationExecution) error {
 	return c.replication.TriggerReplicationExecution(ctx, r)
 }
 
-func (c *RESTClient) ListReplicationExecutions(ctx context.Context, policyID *int64, status, trigger *string) ([]*modelv2.ReplicationExecution, error) {
+func (c *RESTClient) ListReplicationExecutions(ctx context.Context, policyID *int64, status, trigger *string) ([]*model.ReplicationExecution, error) {
 	return c.replication.ListReplicationExecutions(ctx, policyID, status, trigger)
 }
 
-func (c *RESTClient) GetReplicationExecutionByID(ctx context.Context, id int64) (*modelv2.ReplicationExecution, error) {
+func (c *RESTClient) GetReplicationExecutionByID(ctx context.Context, id int64) (*model.ReplicationExecution, error) {
 	return c.replication.GetReplicationExecutionByID(ctx, id)
 }
 
 // Retention Client
 
-func (c *RESTClient) NewRetentionPolicy(ctx context.Context, ret *modelv2.RetentionPolicy) error {
+func (c *RESTClient) NewRetentionPolicy(ctx context.Context, ret *model.RetentionPolicy) error {
 	return c.retention.NewRetentionPolicy(ctx, ret)
 }
 
-func (c *RESTClient) GetRetentionPolicyByProject(ctx context.Context, projectNameOrID string) (*modelv2.RetentionPolicy, error) {
+func (c *RESTClient) GetRetentionPolicyByProject(ctx context.Context, projectNameOrID string) (*model.RetentionPolicy, error) {
 	return c.retention.GetRetentionPolicyByProject(ctx, projectNameOrID)
 }
 
-func (c *RESTClient) GetRetentionPolicyByID(ctx context.Context, id int64) (*modelv2.RetentionPolicy, error) {
+func (c *RESTClient) GetRetentionPolicyByID(ctx context.Context, id int64) (*model.RetentionPolicy, error) {
 	return c.retention.GetRetentionPolicyByID(ctx, id)
 }
 
@@ -324,25 +325,25 @@ func (c *RESTClient) DeleteRetentionPolicyByID(ctx context.Context, id int64) er
 	return c.retention.DeleteRetentionPolicyByID(ctx, id)
 }
 
-func (c *RESTClient) UpdateRetentionPolicy(ctx context.Context, ret *modelv2.RetentionPolicy) error {
+func (c *RESTClient) UpdateRetentionPolicy(ctx context.Context, ret *model.RetentionPolicy) error {
 	return c.retention.UpdateRetentionPolicy(ctx, ret)
 }
 
 // Robot Client
 
-func (c *RESTClient) ListRobotAccounts(ctx context.Context) ([]*modelv2.Robot, error) {
+func (c *RESTClient) ListRobotAccounts(ctx context.Context) ([]*model.Robot, error) {
 	return c.robot.ListRobotAccounts(ctx)
 }
 
-func (c *RESTClient) GetRobotAccountByName(ctx context.Context, name string) (*modelv2.Robot, error) {
+func (c *RESTClient) GetRobotAccountByName(ctx context.Context, name string) (*model.Robot, error) {
 	return c.robot.GetRobotAccountByName(ctx, name)
 }
 
-func (c *RESTClient) GetRobotAccountByID(ctx context.Context, id int64) (*modelv2.Robot, error) {
+func (c *RESTClient) GetRobotAccountByID(ctx context.Context, id int64) (*model.Robot, error) {
 	return c.robot.GetRobotAccountByID(ctx, id)
 }
 
-func (c *RESTClient) NewRobotAccount(ctx context.Context, r *modelv2.RobotCreate) error {
+func (c *RESTClient) NewRobotAccount(ctx context.Context, r *model.RobotCreate) error {
 	return c.robot.NewRobotAccount(ctx, r)
 }
 
@@ -354,29 +355,29 @@ func (c *RESTClient) DeleteRobotAccountByID(ctx context.Context, id int64) error
 	return c.robot.DeleteRobotAccountByID(ctx, id)
 }
 
-func (c *RESTClient) UpdateRobotAccount(ctx context.Context, r *modelv2.Robot) error {
+func (c *RESTClient) UpdateRobotAccount(ctx context.Context, r *model.Robot) error {
 	return c.robot.UpdateRobotAccount(ctx, r)
 }
 
-func (c *RESTClient) RefreshRobotAccountSecretByID(ctx context.Context, id int64, sec string) (*modelv2.RobotSec, error) {
+func (c *RESTClient) RefreshRobotAccountSecretByID(ctx context.Context, id int64, sec string) (*model.RobotSec, error) {
 	return c.robot.RefreshRobotAccountSecretByID(ctx, id, sec)
 }
 
-func (c *RESTClient) RefreshRobotAccountSecretByName(ctx context.Context, name string, sec string) (*modelv2.RobotSec, error) {
+func (c *RESTClient) RefreshRobotAccountSecretByName(ctx context.Context, name string, sec string) (*model.RobotSec, error) {
 	return c.robot.RefreshRobotAccountSecretByName(ctx, name, sec)
 }
 
 // RobotV1 Client
 
-func (c *RESTClient) ListProjectRobotsV1(ctx context.Context, projectNameOrID string) ([]*modelv2.Robot, error) {
+func (c *RESTClient) ListProjectRobotsV1(ctx context.Context, projectNameOrID string) ([]*model.Robot, error) {
 	return c.robotv1.ListProjectRobotsV1(ctx, projectNameOrID)
 }
 
-func (c *RESTClient) AddProjectRobotV1(ctx context.Context, projectNameOrID string, r *modelv2.RobotCreateV1) error {
+func (c *RESTClient) AddProjectRobotV1(ctx context.Context, projectNameOrID string, r *model.RobotCreateV1) error {
 	return c.robotv1.AddProjectRobotV1(ctx, projectNameOrID, r)
 }
 
-func (c *RESTClient) UpdateProjectRobotV1(ctx context.Context, projectNameOrID string, robotID int64, r *modelv2.Robot) error {
+func (c *RESTClient) UpdateProjectRobotV1(ctx context.Context, projectNameOrID string, robotID int64, r *model.Robot) error {
 	return c.robotv1.UpdateProjectRobotV1(ctx, projectNameOrID, robotID, r)
 }
 
@@ -386,7 +387,7 @@ func (c *RESTClient) DeleteProjectRobotV1(ctx context.Context, projectNameOrID s
 
 // Systeminfo Client
 
-func (c *RESTClient) GetSystemInfo(ctx context.Context) (*modelv2.GeneralInfo, error) {
+func (c *RESTClient) GetSystemInfo(ctx context.Context) (*model.GeneralInfo, error) {
 	return c.systeminfo.GetSystemInfo(ctx)
 }
 
@@ -396,27 +397,27 @@ func (c *RESTClient) NewUser(ctx context.Context, username, email, realname, pas
 	return c.user.NewUser(ctx, username, email, realname, password, comments)
 }
 
-func (c *RESTClient) GetUserByName(ctx context.Context, username string) (*modelv2.UserResp, error) {
+func (c *RESTClient) GetUserByName(ctx context.Context, username string) (*model.UserResp, error) {
 	return c.user.GetUserByName(ctx, username)
 }
 
-func (c *RESTClient) GetUserByID(ctx context.Context, id int64) (*modelv2.UserResp, error) {
+func (c *RESTClient) GetUserByID(ctx context.Context, id int64) (*model.UserResp, error) {
 	return c.user.GetUserByID(ctx, id)
 }
 
-func (c *RESTClient) ListUsers(ctx context.Context) ([]*modelv2.UserResp, error) {
+func (c *RESTClient) ListUsers(ctx context.Context) ([]*model.UserResp, error) {
 	return c.user.ListUsers(ctx)
 }
 
-func (c *RESTClient) SearchUsers(ctx context.Context, name string) ([]*modelv2.UserSearchRespItem, error) {
+func (c *RESTClient) SearchUsers(ctx context.Context, name string) ([]*model.UserSearchRespItem, error) {
 	return c.user.SearchUsers(ctx, name)
 }
 
-func (c *RESTClient) GetCurrentUserInfo(ctx context.Context) (*modelv2.UserResp, error) {
+func (c *RESTClient) GetCurrentUserInfo(ctx context.Context) (*model.UserResp, error) {
 	return c.user.GetCurrentUserInfo(ctx)
 }
 
-func (c *RESTClient) GetCurrentUserPermisisons(ctx context.Context, relative bool, scope string) ([]*modelv2.Permission, error) {
+func (c *RESTClient) GetCurrentUserPermisisons(ctx context.Context, relative bool, scope string) ([]*model.Permission, error) {
 	return c.user.GetCurrentUserPermisisons(ctx, relative, scope)
 }
 
@@ -428,11 +429,11 @@ func (c *RESTClient) DeleteUser(ctx context.Context, id int64) error {
 	return c.user.DeleteUser(ctx, id)
 }
 
-func (c *RESTClient) UpdateUserProfile(ctx context.Context, id int64, profile *modelv2.UserProfile) error {
+func (c *RESTClient) UpdateUserProfile(ctx context.Context, id int64, profile *model.UserProfile) error {
 	return c.user.UpdateUserProfile(ctx, id, profile)
 }
 
-func (c *RESTClient) UpdateUserPassword(ctx context.Context, userID int64, passwordRequest *modelv2.PasswordReq) error {
+func (c *RESTClient) UpdateUserPassword(ctx context.Context, userID int64, passwordRequest *model.PasswordReq) error {
 	return c.user.UpdateUserPassword(ctx, userID, passwordRequest)
 }
 
@@ -442,15 +443,15 @@ func (c *RESTClient) UserExists(ctx context.Context, idOrName intstr.IntOrString
 
 // Webhook Client
 
-func (c *RESTClient) ListProjectWebhookPolicies(ctx context.Context, projectID int) ([]*modelv2.WebhookPolicy, error) {
+func (c *RESTClient) ListProjectWebhookPolicies(ctx context.Context, projectID int) ([]*model.WebhookPolicy, error) {
 	return c.webhook.ListProjectWebhookPolicies(ctx, projectID)
 }
 
-func (c *RESTClient) AddProjectWebhookPolicy(ctx context.Context, projectID int, policy *modelv2.WebhookPolicy) error {
+func (c *RESTClient) AddProjectWebhookPolicy(ctx context.Context, projectID int, policy *model.WebhookPolicy) error {
 	return c.webhook.AddProjectWebhookPolicy(ctx, projectID, policy)
 }
 
-func (c *RESTClient) UpdateProjectWebhookPolicy(ctx context.Context, projectID int, policy *modelv2.WebhookPolicy) error {
+func (c *RESTClient) UpdateProjectWebhookPolicy(ctx context.Context, projectID int, policy *model.WebhookPolicy) error {
 	return c.webhook.UpdateProjectWebhookPolicy(ctx, projectID, policy)
 }
 
@@ -460,4 +461,8 @@ func (c *RESTClient) DeleteProjectWebhookPolicy(ctx context.Context, projectID i
 
 func (c *RESTClient) DeleteArtifact(ctx context.Context, projectName, repositoryName, reference string) error {
 	return c.artifact.DeleteArtifact(ctx, projectName, repositoryName, reference)
+}
+
+func (c *RESTClient) Artifacts(ctx context.Context, projectName string, repositoryName string) ([]*model.Artifact, error) {
+	return c.artifact.Artifacts(ctx, projectName, repositoryName)
 }
