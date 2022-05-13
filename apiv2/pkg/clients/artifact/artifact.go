@@ -66,7 +66,7 @@ func (c *RESTClient) Artifacts(ctx context.Context, projectName, repositoryName 
 	if repositoryName == "" {
 		return nil, &clienterrors.ErrRepositoryNameNotProvided{}
 	}
-	pushTime := "push_time"
+	pushTime := "-push_time"
 	withTag := true
 	params := &artifact.ListArtifactsParams{
 		ProjectName:    projectName,
