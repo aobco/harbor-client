@@ -84,3 +84,53 @@ func (c *RESTClient) Artifacts(ctx context.Context, projectName, repositoryName 
 	}
 	return listArtifactsOK.GetPayload(), nil
 }
+
+func (c *RESTClient) DeleteTag(ctx context.Context, projectName, repositoryName, reference, tag string) error {
+	if projectName == "" {
+		return &clienterrors.ErrProjectNameNotProvided{}
+	}
+	if repositoryName == "" {
+		return &clienterrors.ErrRepositoryNameNotProvided{}
+	}
+
+	params := &artifact.DeleteTagParams{
+		ProjectName:    projectName,
+		RepositoryName: repositoryName,
+		Reference:      reference,
+		TagName:        tag,
+		Context:        ctx,
+	}
+
+	params.WithTimeout(c.Options.Timeout)
+
+	_, err := c.V2Client.Artifact.DeleteTag(params, c.AuthInfo)
+
+	return handleSwaggerArtifactErrors(err)
+}
+
+func (c *RESTClient) ListTags(ctx context.Context, projectName, repositoryName, reference string) ([]*model.Tag, error) {
+	if projectName == "" {
+		return nil, &clienterrors.ErrProjectNameNotProvided{}
+	}
+	if repositoryName == "" {
+		return nil, &clienterrors.ErrRepositoryNameNotProvided{}
+	}
+	pushTime := "-push_time"
+	pageSize := int64(100)
+	params := &artifact.ListTagsParams{
+		ProjectName:    projectName,
+		RepositoryName: repositoryName,
+		Reference:      reference,
+		Context:        ctx,
+		Sort:           &pushTime,
+		PageSize:       &pageSize,
+	}
+
+	params.WithTimeout(c.Options.Timeout)
+
+	listTagsOK, err := c.V2Client.Artifact.ListTags(params, c.AuthInfo)
+	if err != nil {
+		return nil, handleSwaggerArtifactErrors(err)
+	}
+	return listTagsOK.GetPayload(), nil
+}

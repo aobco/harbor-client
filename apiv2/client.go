@@ -466,3 +466,11 @@ func (c *RESTClient) DeleteArtifact(ctx context.Context, projectName, repository
 func (c *RESTClient) Artifacts(ctx context.Context, projectName string, repositoryName string) ([]*model.Artifact, error) {
 	return c.artifact.Artifacts(ctx, projectName, repositoryName)
 }
+
+func (c *RESTClient) ListTags(ctx context.Context, projectName string, repositoryName, reference string) ([]*model.Tag, error) {
+	return c.artifact.ListTags(ctx, projectName, repositoryName, reference)
+}
+
+func (c *RESTClient) DeleteTag(ctx context.Context, projectName, repositoryName, reference, tag string) error {
+	return c.artifact.DeleteTag(ctx, projectName, repositoryName, reference, tag)
+}
